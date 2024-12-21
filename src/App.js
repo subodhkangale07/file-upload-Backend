@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css"
 
-const API_URL = process.env.REACT_APP_API_URL;
 
 const App = () => {
   const [file, setFile] = useState(null);
@@ -17,38 +16,39 @@ const App = () => {
   };
 
   // Upload File
-  const handleUpload = async () => {
-    if (!file) {
-      alert("Please select a file first!");  // Agar file select nahi ki gayi toh alert
-      return;
+  const API_URL = process.env.REACT_APP_API_URL;
+
+const handleUpload = async () => {
+  if (!file) {
+    alert("Please select a file first!");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("file", file);
+
+  try {
+    const res = await axios.post(`${API_URL}/api/files/upload`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+
+    if (res.status === 201) {
+      alert("File uploaded successfully!");
+      setFileId(res.data.fileId);
+      setFileName(res.data.fileName);
+      setFileUrl(res.data.fileUrl);
+      fetchFiles();
+    } else {
+      alert(`Upload failed with status ${res.status}`);
     }
-  
-    const formData = new FormData();
-    formData.append("file", file);  
-  
-    try {
-      const res = await axios.post(`${API_URL}/api/files/upload`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",  // File upload karte waqt content type set kar rahe hain
-        },
-      });
-  
-      console.log("Server Response:", res.data);  
-  
-      if (res.status === 201) {
-        alert("File uploaded successfully!");  
-        setFileId(res.data.fileId);  
-        setFileName(res.data.fileName); 
-        setFileUrl(res.data.fileUrl);   
-        fetchFiles();  
-      } else {
-        alert(`Upload failed with status ${res.status}`);  
-      }
-    } catch (err) {
-      console.error("Upload error:", err);
-      alert(`Failed to upload file: ${err.message}`);  
-    }
-  };
+  } catch (err) {
+    console.error("Upload error:", err);
+    alert(`Failed to upload file: ${err.message}`);
+  }
+};
+
 
   // Download File
   const handleDownload = async () => {
