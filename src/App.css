@@ -1,0 +1,123 @@
+/* General Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Container */
+div {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 50px;
+}
+
+/* Header */
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* File Input and Buttons */
+input[type="file"], input[type="text"], button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input[type="text"] {
+  width: calc(100% - 22px);
+  display: inline-block;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* File Upload Section */
+.upload-section {
+  margin-bottom: 20px;
+}
+
+.upload-section input[type="file"] {
+  width: calc(100% - 22px);
+}
+
+.upload-section button {
+  margin-top: 10px;
+}
+
+/* Display Uploaded Files */
+.uploaded-files {
+  margin-top: 20px;
+}
+
+.uploaded-files ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.uploaded-files li {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.uploaded-files li p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.uploaded-files li strong {
+  color: #333;
+}
+
+.uploaded-files li button {
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.uploaded-files li button:hover {
+  background-color: #0056b3;
+}
+
+.uploaded-files li button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Placeholder when no files are uploaded */
+.uploaded-files p {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+}
