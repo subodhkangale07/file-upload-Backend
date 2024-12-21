@@ -17,7 +17,8 @@ const App = () => {
 
   // Upload File
   const API_URL = process.env.REACT_APP_API_URL;
-
+ console.log(API_URL);
+ 
 const handleUpload = async () => {
   if (!file) {
     alert("Please select a file first!");

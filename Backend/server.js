@@ -20,10 +20,11 @@ mongoose
 
 // CORS configuration
 app.use(cors({
-  origin: ['https://file-upload-backend-v6c5.vercel.app', 'http://localhost:3000'], // Allow both frontend URLs
+  origin: ['https://file-upload-backend-v6c5.vercel.app', 'http://localhost:3000'], 
   methods: ['GET', 'POST', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 
 app.use("/api/files", fileRoutes);
 
