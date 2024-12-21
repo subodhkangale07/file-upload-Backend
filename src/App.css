@@ -1,4 +1,3 @@
-/* Reset and General Body Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,20 +6,19 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%); /* Light blue gradient */
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%); 
   min-height: 100vh;
   line-height: 1.6;
-  color: #1f2937; /* Dark gray text color */
+  color: #1f2937; 
   overflow-x: hidden;
 }
 
-/* Main Container */
 .container {
   max-width: 800px;
   margin: 40px auto;
   padding: 32px;
   background-color: #ffffff;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); 
   border-radius: 12px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -30,15 +28,14 @@ body {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* Header */
 h2 {
   text-align: center;
-  color: #111827; /* Darker text color */
+  color: #111827; 
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 24px;
   letter-spacing: -0.5px;
-  text-transform: uppercase; /* Added text-transform for style */
+  text-transform: uppercase; 
 }
 
 /* Input Styles */
@@ -47,21 +44,20 @@ input[type="text"] {
   width: 100%;
   padding: 14px 18px;
   margin: 8px 0 16px;
-  border: 2px solid #d1d5db; /* Lighter border color */
+  border: 2px solid #d1d5db; 
   border-radius: 8px;
   font-size: 16px;
   transition: all 0.2s ease;
-  background-color: #f9fafb; /* Light background */
+  background-color: #f9fafb; 
 }
 
 input[type="file"]:focus,
 input[type="text"]:focus {
   outline: none;
-  border-color: #3b82f6; /* Blue border on focus */
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Soft blue glow */
+  border-color: #3b82f6; 
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); 
 }
 
-/* Button Styles */
 button {
   width: 100%;
   padding: 14px 24px;
@@ -70,15 +66,15 @@ button {
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%); /* Green gradient */
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%); 
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 button:hover {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%); /* Darker green on hover */
+  background: linear-gradient(135deg, #059669 0%, #047857 100%); 
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2); /* Light green shadow */
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2); 
 }
 
 button:active {
@@ -86,22 +82,20 @@ button:active {
   box-shadow: none;
 }
 
-/* Upload Section */
 .upload-section {
   margin-bottom: 32px;
   padding: 24px;
   background-color: #f9fafb;
   border-radius: 12px;
-  border: 1px dashed #e5e7eb; /* Lighter border for dashed effect */
+  border: 1px dashed #e5e7eb;
   transition: all 0.3s ease;
 }
 
 .upload-section:hover {
-  border-color: #3b82f6; /* Highlight on hover */
-  background-color: #f1f5f9; /* Light gray background */
+  border-color: #3b82f6; 
+  background-color: #f1f5f9; 
 }
 
-/* Uploaded Files Section */
 .uploaded-files {
   margin-top: 32px;
 }
@@ -125,7 +119,7 @@ button:active {
 }
 
 .uploaded-files li:hover {
-  background-color: #ffffff; /* White background on hover */
+  background-color: #ffffff; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transform: translateX(4px);
 }
@@ -133,37 +127,36 @@ button:active {
 .uploaded-files li p {
   margin: 0;
   font-size: 15px;
-  color: #4b5563; /* Dark gray text */
+  color: #4b5563; 
 }
 
 .uploaded-files li strong {
-  color: #111827; /* Darker color for file name */
+  color: #111827; 
   font-weight: 500;
 }
 
 .uploaded-files li button {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* Blue button */
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); 
   padding: 8px 16px;
   font-size: 14px;
   width: auto;
 }
 
 .uploaded-files li button:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); /* Darker blue on hover */
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); 
 }
 
 .uploaded-files li button:disabled {
-  background: #e5e7eb; /* Disabled button color */
+  background: #e5e7eb; 
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
 }
 
-/* Empty State */
 .uploaded-files p.empty-state {
   text-align: center;
   font-size: 15px;
-  color: #6b7280; /* Light gray color for empty state */
+  color: #6b7280; 
   margin: 32px 0;
   font-style: italic;
 }
@@ -186,7 +179,6 @@ button:active {
   }
 }
 
-/* Loading States */
 button.loading {
   position: relative;
   color: transparent;
@@ -210,8 +202,7 @@ button.loading::after {
   to { transform: rotate(360deg); }
 }
 
-/* Focus Styles for Accessibility */
 :focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4); /* Blue focus border */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4); 
 }

@@ -22,17 +22,14 @@ mongoose
 .catch((err) => console.error("MongoDB Connection Error:", err));
 
 app.use(cors({
-  origin: 'http://localhost:3000', // Replace this with your frontend URL
-  methods: ['GET', 'POST', 'DELETE'], // Allowed methods
+  origin: 'http://localhost:3000', 
+  methods: ['GET', 'POST', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-// Routes
 app.use("/api/files", fileRoutes);
 
-// Error-handling middleware
 app.use(errorHandler);
 
-// Start Server
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
