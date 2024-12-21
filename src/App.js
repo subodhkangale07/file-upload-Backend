@@ -121,6 +121,7 @@ const App = () => {
     {files.map((file) => (
       <li key={file._id}>
         <p><strong>File Name:</strong> {file.filename}</p>  {/* Ensure you're using the correct field */}
+        <p><strong>File ID:</strong> {file._id}</p>
       </li>
     ))}
   </ul>

@@ -1,123 +1,217 @@
-/* General Body Styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f7fc;
+/* Reset and General Body Styles */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%); /* Light blue gradient */
+  min-height: 100vh;
+  line-height: 1.6;
+  color: #1f2937; /* Dark gray text color */
+  overflow-x: hidden;
+}
+
 /* Main Container */
-div {
+.container {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  margin-top: 50px;
+  margin: 40px auto;
+  padding: 32px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 
 /* Header */
 h2 {
   text-align: center;
-  color: #333;
+  color: #111827; /* Darker text color */
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase; /* Added text-transform for style */
 }
 
-/* File Input and Buttons */
-input[type="file"], input[type="text"], button {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
+/* Input Styles */
+input[type="file"],
 input[type="text"] {
-  width: calc(100% - 22px);
-  display: inline-block;
+  width: 100%;
+  padding: 14px 18px;
+  margin: 8px 0 16px;
+  border: 2px solid #d1d5db; /* Lighter border color */
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  background-color: #f9fafb; /* Light background */
 }
 
+input[type="file"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: #3b82f6; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Soft blue glow */
+}
+
+/* Button Styles */
 button {
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  border: none;
-  padding: 10px;
   width: 100%;
-  border-radius: 4px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%); /* Green gradient */
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%); /* Darker green on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2); /* Light green shadow */
 }
 
-/* File Upload Section */
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Upload Section */
 .upload-section {
-  margin-bottom: 20px;
+  margin-bottom: 32px;
+  padding: 24px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  border: 1px dashed #e5e7eb; /* Lighter border for dashed effect */
+  transition: all 0.3s ease;
 }
 
-.upload-section input[type="file"] {
-  width: calc(100% - 22px);
+.upload-section:hover {
+  border-color: #3b82f6; /* Highlight on hover */
+  background-color: #f1f5f9; /* Light gray background */
 }
 
-.upload-section button {
-  margin-top: 10px;
-}
-
-/* Display Uploaded Files */
+/* Uploaded Files Section */
 .uploaded-files {
-  margin-top: 20px;
+  margin-top: 32px;
 }
 
 .uploaded-files ul {
   list-style-type: none;
-  padding: 0;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .uploaded-files li {
-  background-color: #f9f9f9;
-  padding: 15px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  background-color: #f9fafb;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.3s ease;
+}
+
+.uploaded-files li:hover {
+  background-color: #ffffff; /* White background on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateX(4px);
 }
 
 .uploaded-files li p {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
+  color: #4b5563; /* Dark gray text */
 }
 
 .uploaded-files li strong {
-  color: #333;
+  color: #111827; /* Darker color for file name */
+  font-weight: 500;
 }
 
 .uploaded-files li button {
-  background-color: #007BFF;
-  border: none;
-  color: white;
-  padding: 5px 10px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* Blue button */
+  padding: 8px 16px;
   font-size: 14px;
-  cursor: pointer;
-  border-radius: 4px;
+  width: auto;
 }
 
 .uploaded-files li button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); /* Darker blue on hover */
 }
 
 .uploaded-files li button:disabled {
-  background-color: #aaa;
+  background: #e5e7eb; /* Disabled button color */
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
-/* Placeholder when no files are uploaded */
-.uploaded-files p {
+/* Empty State */
+.uploaded-files p.empty-state {
   text-align: center;
-  font-size: 16px;
-  color: #666;
+  font-size: 15px;
+  color: #6b7280; /* Light gray color for empty state */
+  margin: 32px 0;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 24px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .uploaded-files li {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+/* Loading States */
+button.loading {
+  position: relative;
+  color: transparent;
+}
+
+button.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Focus Styles for Accessibility */
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4); /* Blue focus border */
 }
