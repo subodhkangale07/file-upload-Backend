@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css"
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const App = () => {
   const [file, setFile] = useState(null);
   const [fileId, setFileId] = useState("");
@@ -26,7 +28,7 @@ const App = () => {
     formData.append("file", file);
   
     try {
-      const res = await axios.post("http://localhost:5000/api/files/upload", formData, {
+      const res = await axios.post(`${API_URL}/api/files/upload`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -54,7 +56,7 @@ const App = () => {
   const handleDownload = async () => {
     try {
       // Make GET request to download the file with responseType: "blob"
-      const response = await axios.get(`http://localhost:5000/api/files/${fileId}`, { 
+      const response = await axios.get(`${API_URL}/api/files/${fileId}`, { 
         responseType: "blob" 
       });
   
