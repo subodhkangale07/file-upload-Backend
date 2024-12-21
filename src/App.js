@@ -16,9 +16,8 @@ const App = () => {
   };
 
   // Upload File
-  const API_URL = process.env.REACT_APP_API_URL;
- console.log(API_URL);
- 
+  const API_URL = "https://file-upload-backend-adaj.onrender.com";
+  
 const handleUpload = async () => {
   if (!file) {
     alert("Please select a file first!");
@@ -29,6 +28,7 @@ const handleUpload = async () => {
   formData.append("file", file);
 
   try {
+    console.log("Im in try block");
     const res = await axios.post(`${API_URL}/api/files/upload`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
